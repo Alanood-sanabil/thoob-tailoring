@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفصيل ثوب | Thoob Tailoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+            padding: 32px 16px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.85;
+        }
+
+        main {
+            width: 100%;
+            max-width: 640px;
+            padding: 32px 16px 64px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 8px;
+        }
+
+        /* Thoob Options */
+        .options {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .option-card {
+            flex: 1;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .option-card:hover {
+            border-color: #000000;
+        }
+
+        .option-card.selected {
+            border-color: #000000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .option-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .option-card p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+            background-color: #fafafa;
+            color: #000;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #000000;
+            background-color: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #aaa;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: #333333;
+        }
+
+        .submit-btn:active {
+            background-color: #111111;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px 16px;
+            border: 2px solid #000;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        .success-message h2 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            color: #555;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px 16px;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 480px) {
+            .options {
+                flex-direction: column;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>تفصيل ثوب</h1>
+    <p>اطلب ثوبك المفصّل بسهولة</p>
+</header>
+
+<main>
+    <form id="orderForm">
+        <!-- Thoob Type Selection -->
+        <h2 class="section-title">اختر نوع الثوب</h2>
+        <div class="options">
+            <label class="option-card selected" id="option-white">
+                <input type="radio" name="thoobType" value="white" checked>
+                <div class="option-icon">🤍</div>
+                <h3>ثوب أبيض</h3>
+                <p>ثوب كلاسيكي أبيض للمناسبات واليومي</p>
+            </label>
+            <label class="option-card" id="option-winter">
+                <input type="radio" name="thoobType" value="winter">
+                <div class="option-icon">🖤</div>
+                <h3>ثوب شتوي</h3>
+                <p>ثوب بأقمشة شتوية دافئة ومريحة</p>
+            </label>
+        </div>
+
+        <!-- Customer Info -->
+        <h2 class="section-title">بيانات الطلب</h2>
+
+        <div class="form-group">
+            <label for="name">الاسم الكامل</label>
+            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">رقم الجوال</label>
+            <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">المدينة</label>
+            <select id="city" name="city" required>
+                <option value="" disabled selected>اختر مدينتك</option>
+                <option value="الرياض">الرياض</option>
+                <option value="جدة">جدة</option>
+                <option value="مكة">مكة المكرمة</option>
+                <option value="المدينة">المدينة المنورة</option>
+                <option value="الدمام">الدمام</option>
+                <option value="الخبر">الخبر</option>
+                <option value="بريدة">بريدة</option>
+                <option value="تبوك">تبوك</option>
+                <option value="أبها">أبها</option>
+                <option value="أخرى">أخرى</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">الكمية</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">ملاحظات إضافية</label>
+            <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية مثل المقاسات أو نوع القماش المفضّل..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال الطلب</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+        <h2>تم إرسال طلبك بنجاح ✓</h2>
+        <p>سنتواصل معك قريبًا لتأكيد التفاصيل</p>
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 تفصيل ثوب — جميع الحقوق محفوظة
+</footer>
+
+<script>
+    // Option card selection
+    const optionCards = document.querySelectorAll('.option-card');
+    optionCards.forEach(card => {
+        card.addEventListener('click', () => {
+            optionCards.forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+        });
+    });
+
+    // Form submission
+    const form = document.getElementById('orderForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        console.log('Order submitted:', data);
+
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+    });
+</script>
+
+</body>
+</html>
