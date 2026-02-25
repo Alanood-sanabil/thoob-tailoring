@@ -23,17 +23,11 @@
 .about__visual-frame {
     width: 100%;
     max-width: 420px;
-    aspect-ratio: 1;
-    border: 2px solid var(--gold);
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
 }
 
 .about__visual-frame img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
