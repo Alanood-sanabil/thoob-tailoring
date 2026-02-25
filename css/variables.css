@@ -1,0 +1,24 @@
+:root {
+    /* Colors */
+    --white: #FFFFFF;
+    --off-white: #F8F6F2;
+    --black: #0D0D0D;
+    --black-soft: #1A1A1A;
+    --gray-light: #E8E4DE;
+    --gray-mid: #B0A898;
+    --gold: #C8A96E;
+    --gold-light: #E2CFA0;
+    --error: #D64545;
+
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Tajawal', sans-serif;
+
+    /* Spacing */
+    --section-padding: 100px 24px;
+    --container-max: 1200px;
+
+    /* Transitions */
+    --transition: 0.3s ease;
+    --transition-slow: 0.6s ease;
+}

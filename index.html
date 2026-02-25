@@ -3,311 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تفصيل ثوب | Thoob Tailoring</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>ثوب تيلورنج | Thoob Tailoring</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-        header {
-            width: 100%;
-            background-color: #000000;
-            color: #ffffff;
-            text-align: center;
-            padding: 32px 16px;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 0.85;
-        }
-
-        main {
-            width: 100%;
-            max-width: 640px;
-            padding: 32px 16px 64px;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #000000;
-            padding-bottom: 8px;
-        }
-
-        /* Thoob Options */
-        .options {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .option-card {
-            flex: 1;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 24px 16px;
-            text-align: center;
-            cursor: pointer;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .option-card:hover {
-            border-color: #000000;
-        }
-
-        .option-card.selected {
-            border-color: #000000;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
-        }
-
-        .option-card input[type="radio"] {
-            display: none;
-        }
-
-        .option-icon {
-            font-size: 3rem;
-            margin-bottom: 12px;
-        }
-
-        .option-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-        }
-
-        .option-card p {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        /* Form Fields */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
-            background-color: #fafafa;
-            color: #000;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000000;
-            background-color: #fff;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #aaa;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: #000000;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            margin-top: 8px;
-        }
-
-        .submit-btn:hover {
-            background-color: #333333;
-        }
-
-        .submit-btn:active {
-            background-color: #111111;
-        }
-
-        /* Success Message */
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 32px 16px;
-            border: 2px solid #000;
-            border-radius: 12px;
-            margin-top: 24px;
-        }
-
-        .success-message h2 {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-
-        .success-message p {
-            color: #555;
-        }
-
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px 16px;
-            font-size: 0.85rem;
-            color: #999;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 480px) {
-            .options {
-                flex-direction: column;
-            }
-
-            header h1 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
-<header>
-    <h1>تفصيل ثوب</h1>
-    <p>اطلب ثوبك المفصّل بسهولة</p>
-</header>
-
-<main>
-    <form id="orderForm">
-        <!-- Thoob Type Selection -->
-        <h2 class="section-title">اختر نوع الثوب</h2>
-        <div class="options">
-            <label class="option-card selected" id="option-white">
-                <input type="radio" name="thoobType" value="white" checked>
-                <div class="option-icon">🤍</div>
-                <h3>ثوب أبيض</h3>
-                <p>ثوب كلاسيكي أبيض للمناسبات واليومي</p>
-            </label>
-            <label class="option-card" id="option-winter">
-                <input type="radio" name="thoobType" value="winter">
-                <div class="option-icon">🖤</div>
-                <h3>ثوب شتوي</h3>
-                <p>ثوب بأقمشة شتوية دافئة ومريحة</p>
-            </label>
-        </div>
-
-        <!-- Customer Info -->
-        <h2 class="section-title">بيانات الطلب</h2>
-
-        <div class="form-group">
-            <label for="name">الاسم الكامل</label>
-            <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
-        </div>
-
-        <div class="form-group">
-            <label for="phone">رقم الجوال</label>
-            <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
-        </div>
-
-        <div class="form-group">
-            <label for="city">المدينة</label>
-            <select id="city" name="city" required>
-                <option value="" disabled selected>اختر مدينتك</option>
-                <option value="الرياض">الرياض</option>
-                <option value="جدة">جدة</option>
-                <option value="مكة">مكة المكرمة</option>
-                <option value="المدينة">المدينة المنورة</option>
-                <option value="الدمام">الدمام</option>
-                <option value="الخبر">الخبر</option>
-                <option value="بريدة">بريدة</option>
-                <option value="تبوك">تبوك</option>
-                <option value="أبها">أبها</option>
-                <option value="أخرى">أخرى</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="quantity">الكمية</label>
-            <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" required>
-        </div>
-
-        <div class="form-group">
-            <label for="notes">ملاحظات إضافية</label>
-            <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية مثل المقاسات أو نوع القماش المفضّل..."></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">إرسال الطلب</button>
-    </form>
-
-    <div class="success-message" id="successMessage">
-        <h2>تم إرسال طلبك بنجاح ✓</h2>
-        <p>سنتواصل معك قريبًا لتأكيد التفاصيل</p>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+    <a href="#" class="navbar__logo">
+        <!-- Thoob SVG Icon -->
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4L20 8L14 20L18 22L20 16V58H44V16L46 22L50 20L44 8L32 4Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+            <path d="M28 8C28 8 30 12 32 12C34 12 36 8 36 8" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span>ثوب تيلورنج</span>
+    </a>
+    <div class="navbar__links">
+        <a href="#hero">الرئيسية</a>
+        <a href="#about">من نحن</a>
+        <a href="#order" class="cta">اطلب الآن</a>
     </div>
-</main>
+</nav>
 
-<footer>
-    &copy; 2026 تفصيل ثوب — جميع الحقوق محفوظة
+<!-- ============ HERO SLIDER ============ -->
+<section class="hero" id="hero">
+    <div class="hero__slides">
+        <div class="hero__slide active">
+            <div class="hero__slide-bg"></div>
+        </div>
+        <div class="hero__slide">
+            <div class="hero__slide-bg"></div>
+        </div>
+        <div class="hero__slide">
+            <div class="hero__slide-bg"></div>
+        </div>
+    </div>
+
+    <div class="hero__overlay"></div>
+
+    <div class="hero__content">
+        <span class="gold-label">خياطة فاخرة على مقاسك</span>
+        <h1>ثوب تيلورنج</h1>
+        <p class="hero__subtitle">نصلك أينما كنت في المملكة</p>
+        <a href="#order" class="hero__cta">
+            اطلب الآن
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5"/>
+                <path d="M12 5l-7 7 7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Arrows -->
+    <div class="hero__arrows">
+        <button class="hero__arrow hero__arrow--next" aria-label="التالي">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+        <button class="hero__arrow hero__arrow--prev" aria-label="السابق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Dots -->
+    <div class="hero__dots">
+        <button class="hero__dot active" aria-label="الشريحة 1"></button>
+        <button class="hero__dot" aria-label="الشريحة 2"></button>
+        <button class="hero__dot" aria-label="الشريحة 3"></button>
+    </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+    <div class="about__container">
+        <!-- Text Column (right in RTL = first in source) -->
+        <div class="about__text">
+            <span class="gold-label fade-in-up">خدمتنا</span>
+            <h2 class="fade-in-up">الخياطة تأتي إليك</h2>
+            <p class="fade-in-up">نقدم لك خدمة خياطة الأثواب السعودية الفاخرة في منزلك، بأيدي خبراء متخصصين وأقمشة عالية الجودة.</p>
+
+            <div class="about__features">
+                <div class="about__feature fade-in-up">
+                    <div class="about__feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="about__feature-text">
+                        <h3>في منزلك</h3>
+                        <p>نأتي إليك أينما كنت داخل المملكة</p>
+                    </div>
+                </div>
+
+                <div class="about__feature fade-in-up">
+                    <div class="about__feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="6" cy="6" r="3"/>
+                            <path d="M6 9v12"/>
+                            <path d="M13 6l-4 6h9l-4 6"/>
+                        </svg>
+                    </div>
+                    <div class="about__feature-text">
+                        <h3>جودة عالية</h3>
+                        <p>أقمشة مختارة بعناية لكل موسم</p>
+                    </div>
+                </div>
+
+                <div class="about__feature fade-in-up">
+                    <div class="about__feature-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <div class="about__feature-text">
+                        <h3>تسليم سريع</h3>
+                        <p>جاهز في الوقت الذي يناسبك</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Column -->
+        <div class="about__visual fade-in-up">
+            <div class="about__visual-frame">
+                <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M60 10L40 18L30 42L36 44L40 32V108H80V32L84 44L90 42L80 18L60 10Z" stroke="#C8A96E" stroke-width="2" fill="none"/>
+                    <path d="M52 18C52 18 56 26 60 26C64 26 68 18 68 18" stroke="#C8A96E" stroke-width="1.5" fill="none"/>
+                    <line x1="44" y1="52" x2="76" y2="52" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
+                    <line x1="44" y1="62" x2="76" y2="62" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
+                    <line x1="44" y1="72" x2="76" y2="72" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <hr class="gold-rule">
+</section>
+
+<!-- ============ ORDER FORM ============ -->
+<section class="order" id="order">
+    <div class="order__container">
+        <span class="gold-label fade-in-up">اطلب الآن</span>
+        <h2 class="fade-in-up">اطلب ثوبك المفصّل</h2>
+        <p class="order__subtext fade-in-up">أدخل بياناتك وسنتواصل معك خلال 24 ساعة</p>
+
+        <form id="orderForm" class="order__form" novalidate>
+            <!-- Thoob Type Cards -->
+            <div class="order__type-cards fade-in-up">
+                <label class="order__type-card selected">
+                    <input type="radio" name="thoobType" value="white" checked>
+                    <!-- White Thoob SVG -->
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="currentColor" stroke-width="1" fill="none"/>
+                    </svg>
+                    <span>ثوب أبيض</span>
+                </label>
+                <label class="order__type-card">
+                    <input type="radio" name="thoobType" value="winter">
+                    <!-- Winter Thoob SVG (with horizontal lines) -->
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <line x1="26" y1="28" x2="38" y2="28" stroke="currentColor" stroke-width="0.8"/>
+                        <line x1="26" y1="34" x2="38" y2="34" stroke="currentColor" stroke-width="0.8"/>
+                        <line x1="26" y1="40" x2="38" y2="40" stroke="currentColor" stroke-width="0.8"/>
+                        <line x1="26" y1="46" x2="38" y2="46" stroke="currentColor" stroke-width="0.8"/>
+                    </svg>
+                    <span>ثوب شتوي</span>
+                </label>
+            </div>
+
+            <!-- Quantity Stepper -->
+            <div class="order__quantity fade-in-up">
+                <button type="button" class="order__quantity-btn order__quantity-btn--plus" aria-label="زيادة">+</button>
+                <div class="order__quantity-value">1</div>
+                <button type="button" class="order__quantity-btn order__quantity-btn--minus" aria-label="تقليل">−</button>
+                <input type="hidden" name="quantity" id="quantity" value="1">
+            </div>
+
+            <!-- Name & Phone Row -->
+            <div class="order__row fade-in-up">
+                <div class="order__field">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+                    <span class="error-msg">يرجى إدخال الاسم</span>
+                </div>
+                <div class="order__field">
+                    <label for="phone">رقم الجوال</label>
+                    <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
+                    <span class="error-msg">يرجى إدخال رقم جوال صحيح</span>
+                </div>
+            </div>
+
+            <!-- City -->
+            <div class="order__field fade-in-up">
+                <label for="city">المدينة</label>
+                <select id="city" name="city" required>
+                    <option value="" disabled selected>اختر مدينتك</option>
+                    <option value="الرياض">الرياض</option>
+                    <option value="جدة">جدة</option>
+                    <option value="مكة المكرمة">مكة المكرمة</option>
+                    <option value="المدينة المنورة">المدينة المنورة</option>
+                    <option value="الدمام">الدمام</option>
+                    <option value="الخبر">الخبر</option>
+                    <option value="بريدة">بريدة</option>
+                    <option value="تبوك">تبوك</option>
+                    <option value="أبها">أبها</option>
+                    <option value="حائل">حائل</option>
+                    <option value="نجران">نجران</option>
+                    <option value="جازان">جازان</option>
+                    <option value="أخرى">أخرى</option>
+                </select>
+                <span class="error-msg">يرجى اختيار المدينة</span>
+            </div>
+
+            <!-- Notes -->
+            <div class="order__field fade-in-up">
+                <label for="notes">ملاحظات إضافية <span style="font-weight:400;color:var(--gray-mid)">(اختياري)</span></label>
+                <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية مثل المقاسات أو نوع القماش المفضّل..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="order__submit fade-in-up">
+                إرسال الطلب
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"/>
+                    <path d="M12 5l-7 7 7 7"/>
+                </svg>
+            </button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="order__success" id="orderSuccess">
+            <div class="order__success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+            <h2>تم إرسال طلبك بنجاح</h2>
+            <p>سنتواصل معك قريبًا لتأكيد التفاصيل</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="footer__logo">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="#C8A96E" stroke-width="2" fill="none"/>
+            <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="#C8A96E" stroke-width="1.5" fill="none"/>
+        </svg>
+        <span>ثوب تيلورنج</span>
+    </div>
+    <p class="footer__tagline">خياطة سعودية فاخرة</p>
+    <hr class="gold-rule">
+    <p class="footer__copy">&copy; 2025 ثوب تيلورنج</p>
 </footer>
 
-<script>
-    // Option card selection
-    const optionCards = document.querySelectorAll('.option-card');
-    optionCards.forEach(card => {
-        card.addEventListener('click', () => {
-            optionCards.forEach(c => c.classList.remove('selected'));
-            card.classList.add('selected');
-        });
-    });
-
-    // Form submission
-    const form = document.getElementById('orderForm');
-    const successMessage = document.getElementById('successMessage');
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-        console.log('Order submitted:', data);
-
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
-    });
-</script>
+<!-- JS -->
+<script defer src="js/slider.js"></script>
+<script defer src="js/scroll.js"></script>
+<script defer src="js/form.js"></script>
 
 </body>
 </html>

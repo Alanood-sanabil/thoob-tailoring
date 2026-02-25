@@ -1,0 +1,133 @@
+.about {
+    background-color: var(--off-white);
+    padding: var(--section-padding);
+}
+
+.about__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Visual Column (left in LTR = left in visual, but RTL reverses grid order) */
+.about__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__visual-frame {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    border: 2px solid var(--gold);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(200, 169, 110, 0.04) 20px,
+            rgba(200, 169, 110, 0.04) 21px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 20px,
+            rgba(200, 169, 110, 0.04) 20px,
+            rgba(200, 169, 110, 0.04) 21px
+        );
+}
+
+.about__visual-frame svg {
+    width: 120px;
+    height: 120px;
+    opacity: 0.9;
+}
+
+/* Text Column */
+.about__text .gold-label {
+    margin-bottom: 12px;
+}
+
+.about__text .gold-label::before {
+    display: none;
+}
+
+.about__text h2 {
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.about__text > p {
+    color: var(--black-soft);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+    max-width: 480px;
+}
+
+/* Features */
+.about__features {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.about__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.about__feature-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.about__feature-text h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--black);
+    margin-bottom: 4px;
+}
+
+.about__feature-text p {
+    font-size: 0.9rem;
+    color: var(--gray-mid);
+    line-height: 1.6;
+}
+
+/* Gold Rule at Bottom */
+.about .gold-rule {
+    margin-top: 80px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about__visual {
+        order: -1;
+    }
+
+    .about__visual-frame {
+        max-width: 300px;
+    }
+}
