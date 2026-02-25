@@ -65,7 +65,7 @@
             const div = document.createElement('div');
             div.className = 'about__feature fade-in-up';
             div.innerHTML =
-                '<div class="about__feature-icon">' + f.icon + '</div>' +
+                '<div class="about__feature-accent"></div>' +
                 '<div class="about__feature-text">' +
                     '<h3>' + f.title + '</h3>' +
                     '<p>'  + f.desc  + '</p>'  +
