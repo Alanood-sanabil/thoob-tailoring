@@ -20,7 +20,7 @@
 
     /**
      * For elements that contain a mix of text + a child SVG,
-     * this clears the element, re-inserts the SVG, and prepends the text.
+     * clears the element, appends the text, then re-appends the SVG.
      */
     function setTextBeforeSVG(id, value) {
         const el = $id(id);
@@ -33,6 +33,9 @@
 
     // ── Page title ─────────────────────────────────────────────────
     document.title = CONTENT.brand.nameAr + ' | ' + CONTENT.brand.nameEn;
+
+    // ── Urgency Banner ─────────────────────────────────────────────
+    setText('urgency-banner-text', CONTENT.urgencyBanner.text);
 
     // ── Navbar ─────────────────────────────────────────────────────
     setText('navbar-brand-name', CONTENT.brand.nameAr);
@@ -49,9 +52,9 @@
     }
 
     // ── Hero ───────────────────────────────────────────────────────
-    setText('hero-badge',    CONTENT.hero.badge);
     setText('hero-heading',  CONTENT.hero.heading);
     setText('hero-subtitle', CONTENT.hero.subheading);
+    setText('hero-body',     CONTENT.hero.body);
     setTextBeforeSVG('hero-cta', CONTENT.hero.cta);
 
     // ── About ──────────────────────────────────────────────────────
@@ -84,20 +87,16 @@
         setText('type-label-' + type.id, type.valueAr);
     });
 
-    // Field: name
-    setText('label-name',   CONTENT.form.fields.name.label);
-    setText('error-name',   CONTENT.form.fields.name.error);
-    setAttr('name', 'placeholder', CONTENT.form.fields.name.placeholder);
+    // Field labels and placeholders
+    setText('label-name',  CONTENT.form.fields.name.label);
+    setAttr('name',  'placeholder', CONTENT.form.fields.name.placeholder);
 
-    // Field: phone
-    setText('label-phone',  CONTENT.form.fields.phone.label);
-    setText('error-phone',  CONTENT.form.fields.phone.error);
+    setText('label-phone', CONTENT.form.fields.phone.label);
     setAttr('phone', 'placeholder', CONTENT.form.fields.phone.placeholder);
 
-    // Field: city label + default option + city list
-    setText('label-city',   CONTENT.form.fields.city.label);
-    setText('error-city',   CONTENT.form.fields.city.error);
+    setText('label-city',  CONTENT.form.fields.city.label);
 
+    // Build city options
     const citySelect = $id('city');
     if (citySelect) {
         const defaultOpt = document.createElement('option');
@@ -115,15 +114,8 @@
         });
     }
 
-    // Field: notes (label has an optional badge)
-    const notesLabel = $id('label-notes');
-    if (notesLabel) {
-        notesLabel.innerHTML =
-            CONTENT.form.fields.notes.label +
-            ' <span style="font-weight:400;color:var(--gray-mid)">' +
-            CONTENT.form.fields.notes.optionalLabel +
-            '</span>';
-    }
+    // Notes label
+    setText('label-notes', CONTENT.form.fields.notes.label);
     setAttr('notes', 'placeholder', CONTENT.form.fields.notes.placeholder);
 
     // Submit button
@@ -133,9 +125,34 @@
     setText('success-title', CONTENT.form.successTitle);
     setText('success-msg',   CONTENT.form.successMsg);
 
+    // ── Testimonials ───────────────────────────────────────────────
+    setText('testimonials-label',   CONTENT.testimonials.label);
+    setText('testimonials-heading', CONTENT.testimonials.heading);
+
+    const grid = $id('testimonials-grid');
+    if (grid) {
+        CONTENT.testimonials.items.forEach(function (item) {
+            const card = document.createElement('div');
+            card.className = 'testimonials__card fade-in-up';
+            card.innerHTML =
+                '<p class="testimonials__quote">' + item.text + '</p>' +
+                '<div class="testimonials__author">' +
+                    '<div class="testimonials__author-line"></div>' +
+                    '<div class="testimonials__author-info">' +
+                        '<span class="testimonials__name">' + item.name + '</span>' +
+                        '<span class="testimonials__city">'  + item.city  + '</span>' +
+                    '</div>' +
+                '</div>';
+            grid.appendChild(card);
+        });
+    }
+
     // ── Footer ─────────────────────────────────────────────────────
     setText('footer-brand-name', CONTENT.brand.nameAr);
-    setText('footer-tagline',    CONTENT.brand.tagline);
+    setText('footer-tagline',    CONTENT.footer.tagline);
+    setText('footer-sub',        CONTENT.footer.sub);
+    setText('footer-hours',      CONTENT.footer.hours);
+    setText('footer-whatsapp',   CONTENT.footer.whatsapp);
     setText('footer-copyright',  CONTENT.footer.copyright);
 
 })();

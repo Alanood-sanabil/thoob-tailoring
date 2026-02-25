@@ -71,14 +71,14 @@
     gap: 16px;
 }
 
-/* Gold vertical line accent — replaces the icon box */
+/* Gold dot accent — sits beside the feature title */
 .about__feature-accent {
     flex-shrink: 0;
-    width: 3px;
-    height: 42px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
     background-color: var(--gold);
-    border-radius: 2px;
-    margin-top: 2px;
+    margin-top: 7px;
 }
 
 .about__feature-text h3 {

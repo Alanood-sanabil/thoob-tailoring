@@ -1,6 +1,23 @@
-.navbar {
+/* Urgency Banner — fixed strip at very top */
+.urgency-banner {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: var(--gold);
+    color: var(--primary-dark);
+    text-align: center;
+    padding: 10px 24px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+}
+
+.navbar {
+    position: fixed;
+    top: 42px;      /* sits below the urgency banner */
     right: 0;
     left: 0;
     z-index: 1000;
@@ -71,7 +88,13 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+    .urgency-banner {
+        font-size: 0.78rem;
+        padding: 8px 16px;
+    }
+
     .navbar {
+        top: 38px;
         padding: 16px 24px;
     }
 
