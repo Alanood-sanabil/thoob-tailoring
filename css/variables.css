@@ -1,13 +1,18 @@
 :root {
     /* Colors */
     --white: #FFFFFF;
-    --off-white: #F8F6F2;
-    --black: #0D0D0D;
-    --black-soft: #1A1A1A;
-    --gray-light: #E8E4DE;
-    --gray-mid: #B0A898;
+    --off-white: #F0EDE6;
+    --black: #0A0E1A;
+    --black-soft: #111827;
+    --primary: #0D1B3E;
+    --primary-dark: #070F24;
+    --primary-mid: #162347;
+    --primary-light: #1E3060;
     --gold: #C8A96E;
     --gold-light: #E2CFA0;
+    --gold-dark: #A8893E;
+    --gray-light: #D4D8E2;
+    --gray-mid: #8A92A8;
     --error: #D64545;
 
     /* Fonts */

@@ -13,9 +13,9 @@
 }
 
 .navbar.scrolled {
-    background-color: var(--black);
+    background-color: var(--primary-dark);
     padding: 14px 48px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 20px rgba(7, 15, 36, 0.6);
 }
 
 .navbar__logo {
@@ -57,6 +57,7 @@
 }
 
 .navbar__links a.cta {
+    color: var(--gold);
     border: 1px solid var(--gold);
     padding: 8px 24px;
     border-radius: 50px;
@@ -65,7 +66,7 @@
 
 .navbar__links a.cta:hover {
     background-color: var(--gold);
-    color: var(--black);
+    color: var(--primary-dark);
 }
 
 /* Mobile */

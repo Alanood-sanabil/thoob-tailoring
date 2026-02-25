@@ -1,4 +1,17 @@
 (() => {
+    // Inject local image backgrounds in slide order
+    const SLIDE_IMAGES = [
+        'images/main-image.png',
+        'images/image1.png',
+        'images/image2.png'
+    ];
+
+    document.querySelectorAll('.hero__slide-bg').forEach(function (bg, i) {
+        if (SLIDE_IMAGES[i]) {
+            bg.style.backgroundImage = "url('" + SLIDE_IMAGES[i] + "')";
+        }
+    });
+
     const slides = document.querySelectorAll('.hero__slide');
     const dots = document.querySelectorAll('.hero__dot');
     const prevBtn = document.querySelector('.hero__arrow--prev');

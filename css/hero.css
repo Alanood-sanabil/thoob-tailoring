@@ -3,7 +3,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--black);
+    background-color: var(--primary-dark);
 }
 
 /* Slides */
@@ -23,35 +23,20 @@
     opacity: 1;
 }
 
+/* Background set by slider.js — cover + center is the default */
 .hero__slide-bg {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
+    background-color: var(--primary-dark); /* fallback while image loads */
 }
 
-.hero__slide:nth-child(1) .hero__slide-bg {
-    background: linear-gradient(135deg, #2a2018 0%, #1a1410 50%, #0d0d0d 100%);
-}
-
-.hero__slide:nth-child(2) .hero__slide-bg {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2420 50%, #0d0d0d 100%);
-}
-
-.hero__slide:nth-child(3) .hero__slide-bg {
-    background: linear-gradient(135deg, #1c1a14 0%, #12100c 50%, #0d0d0d 100%);
-}
-
-/* Overlay */
+/* Dark blue directional overlay on every slide */
 .hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(0, 0, 0, 0.7) 100%
-    );
+    background: linear-gradient(to left, rgba(7,15,36,0.85) 40%, rgba(7,15,36,0.3) 100%);
     z-index: 1;
 }
 
@@ -80,7 +65,7 @@
 }
 
 .hero__subtitle {
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--gray-light);
     font-family: var(--font-body);
     font-weight: 300;
     font-size: clamp(1rem, 2vw, 1.25rem);
@@ -111,7 +96,7 @@
 
 .hero__cta:hover {
     background-color: var(--white);
-    color: var(--black);
+    color: var(--primary-dark);
 }
 
 .hero__cta:hover svg {
@@ -141,7 +126,7 @@
     align-items: center;
     justify-content: center;
     color: var(--white);
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(7, 15, 36, 0.55);
     backdrop-filter: blur(4px);
     pointer-events: all;
     transition: border-color var(--transition), background-color var(--transition);
@@ -149,7 +134,7 @@
 
 .hero__arrow:hover {
     border-color: var(--gold);
-    background-color: rgba(200, 169, 110, 0.15);
+    background-color: rgba(7, 15, 36, 0.8);
 }
 
 .hero__arrow svg {
@@ -172,7 +157,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    border: 1.5px solid var(--gray-mid);
     background: transparent;
     transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
 }

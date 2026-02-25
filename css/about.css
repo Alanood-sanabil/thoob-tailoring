@@ -1,5 +1,5 @@
 .about {
-    background-color: var(--off-white);
+    background-color: var(--primary);
     padding: var(--section-padding);
 }
 
@@ -34,16 +34,17 @@
             45deg,
             transparent,
             transparent 20px,
-            rgba(200, 169, 110, 0.04) 20px,
-            rgba(200, 169, 110, 0.04) 21px
+            rgba(200, 169, 110, 0.06) 20px,
+            rgba(200, 169, 110, 0.06) 21px
         ),
         repeating-linear-gradient(
             -45deg,
             transparent,
             transparent 20px,
-            rgba(200, 169, 110, 0.04) 20px,
-            rgba(200, 169, 110, 0.04) 21px
-        );
+            rgba(200, 169, 110, 0.06) 20px,
+            rgba(200, 169, 110, 0.06) 21px
+        ),
+        var(--primary-dark);
 }
 
 .about__visual-frame svg {
@@ -62,12 +63,12 @@
 }
 
 .about__text h2 {
-    color: var(--black);
+    color: var(--white);
     margin-bottom: 20px;
 }
 
 .about__text > p {
-    color: var(--black-soft);
+    color: var(--gray-light);
     font-size: 1.05rem;
     margin-bottom: 40px;
     max-width: 480px;
@@ -90,7 +91,8 @@
     flex-shrink: 0;
     width: 44px;
     height: 44px;
-    background-color: var(--black);
+    background-color: rgba(200, 169, 110, 0.15);
+    border: 1px solid rgba(200, 169, 110, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,13 +103,13 @@
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 1rem;
-    color: var(--black);
+    color: var(--white);
     margin-bottom: 4px;
 }
 
 .about__feature-text p {
     font-size: 0.9rem;
-    color: var(--gray-mid);
+    color: var(--gray-light);
     line-height: 1.6;
 }
 
