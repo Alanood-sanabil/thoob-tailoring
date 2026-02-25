@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ثوب تيلورنج | Thoob Tailoring</title>
+    <!-- Title set dynamically by render.js -->
+    <title>رفيف | Rafeef</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS (order matters: variables first, then components) -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/typography.css">
@@ -23,265 +24,244 @@
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
+<!-- ============================================================
+     NAVBAR
+     brand name + nav links injected by render.js
+============================================================ -->
 <nav class="navbar" id="navbar">
     <a href="#" class="navbar__logo">
-        <!-- Thoob SVG Icon -->
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 4L20 8L14 20L18 22L20 16V58H44V16L46 22L50 20L44 8L32 4Z" stroke="#FFFFFF" stroke-width="2" fill="none"/>
-            <path d="M28 8C28 8 30 12 32 12C34 12 36 8 36 8" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+            <path d="M32 4L20 8L14 20L18 22L20 16V58H44V16L46 22L50 20L44 8L32 4Z"
+                  stroke="#FFFFFF" stroke-width="2" fill="none"/>
+            <path d="M28 8C28 8 30 12 32 12C34 12 36 8 36 8"
+                  stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
         </svg>
-        <span>ثوب تيلورنج</span>
+        <span id="navbar-brand-name"></span>
     </a>
-    <div class="navbar__links">
-        <a href="#hero">الرئيسية</a>
-        <a href="#about">من نحن</a>
-        <a href="#order" class="cta">اطلب الآن</a>
-    </div>
+    <!-- Links built by render.js -->
+    <div class="navbar__links" id="navbar-links"></div>
 </nav>
 
-<!-- ============ HERO SLIDER ============ -->
+
+<!-- ============================================================
+     HERO SLIDER
+     All text populated by render.js
+============================================================ -->
 <section class="hero" id="hero">
     <div class="hero__slides">
-        <div class="hero__slide active">
-            <div class="hero__slide-bg"></div>
-        </div>
-        <div class="hero__slide">
-            <div class="hero__slide-bg"></div>
-        </div>
-        <div class="hero__slide">
-            <div class="hero__slide-bg"></div>
-        </div>
+        <div class="hero__slide active"><div class="hero__slide-bg"></div></div>
+        <div class="hero__slide"><div class="hero__slide-bg"></div></div>
+        <div class="hero__slide"><div class="hero__slide-bg"></div></div>
     </div>
 
     <div class="hero__overlay"></div>
 
     <div class="hero__content">
-        <span class="gold-label">خياطة فاخرة على مقاسك</span>
-        <h1>ثوب تيلورنج</h1>
-        <p class="hero__subtitle">نصلك أينما كنت في المملكة</p>
-        <a href="#order" class="hero__cta">
-            اطلب الآن
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <span class="gold-label" id="hero-badge"></span>
+        <h1 id="hero-heading"></h1>
+        <p class="hero__subtitle" id="hero-subtitle"></p>
+        <!-- Text node prepended by render.js; SVG kept as trailing arrow -->
+        <a href="#order" class="hero__cta" id="hero-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 12H5"/>
                 <path d="M12 5l-7 7 7 7"/>
             </svg>
         </a>
     </div>
 
-    <!-- Arrows -->
     <div class="hero__arrows">
         <button class="hero__arrow hero__arrow--next" aria-label="التالي">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6"/>
             </svg>
         </button>
         <button class="hero__arrow hero__arrow--prev" aria-label="السابق">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 18l-6-6 6-6"/>
             </svg>
         </button>
     </div>
 
-    <!-- Dots -->
     <div class="hero__dots">
         <button class="hero__dot active" aria-label="الشريحة 1"></button>
-        <button class="hero__dot" aria-label="الشريحة 2"></button>
-        <button class="hero__dot" aria-label="الشريحة 3"></button>
+        <button class="hero__dot"        aria-label="الشريحة 2"></button>
+        <button class="hero__dot"        aria-label="الشريحة 3"></button>
     </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
+
+<!-- ============================================================
+     ABOUT
+     Heading, body, and feature rows injected by render.js
+============================================================ -->
 <section class="about" id="about">
     <div class="about__container">
-        <!-- Text Column (right in RTL = first in source) -->
+
+        <!-- Text column -->
         <div class="about__text">
-            <span class="gold-label fade-in-up">خدمتنا</span>
-            <h2 class="fade-in-up">الخياطة تأتي إليك</h2>
-            <p class="fade-in-up">نقدم لك خدمة خياطة الأثواب السعودية الفاخرة في منزلك، بأيدي خبراء متخصصين وأقمشة عالية الجودة.</p>
-
-            <div class="about__features">
-                <div class="about__feature fade-in-up">
-                    <div class="about__feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                    </div>
-                    <div class="about__feature-text">
-                        <h3>في منزلك</h3>
-                        <p>نأتي إليك أينما كنت داخل المملكة</p>
-                    </div>
-                </div>
-
-                <div class="about__feature fade-in-up">
-                    <div class="about__feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="6" cy="6" r="3"/>
-                            <path d="M6 9v12"/>
-                            <path d="M13 6l-4 6h9l-4 6"/>
-                        </svg>
-                    </div>
-                    <div class="about__feature-text">
-                        <h3>جودة عالية</h3>
-                        <p>أقمشة مختارة بعناية لكل موسم</p>
-                    </div>
-                </div>
-
-                <div class="about__feature fade-in-up">
-                    <div class="about__feature-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <div class="about__feature-text">
-                        <h3>تسليم سريع</h3>
-                        <p>جاهز في الوقت الذي يناسبك</p>
-                    </div>
-                </div>
-            </div>
+            <span class="gold-label fade-in-up" id="about-label"></span>
+            <h2 class="fade-in-up" id="about-heading"></h2>
+            <p class="fade-in-up" id="about-body"></p>
+            <!-- Feature rows built by render.js from CONTENT.about.features -->
+            <div class="about__features" id="about-features"></div>
         </div>
 
-        <!-- Visual Column -->
+        <!-- Decorative visual column -->
         <div class="about__visual fade-in-up">
             <div class="about__visual-frame">
                 <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M60 10L40 18L30 42L36 44L40 32V108H80V32L84 44L90 42L80 18L60 10Z" stroke="#C8A96E" stroke-width="2" fill="none"/>
-                    <path d="M52 18C52 18 56 26 60 26C64 26 68 18 68 18" stroke="#C8A96E" stroke-width="1.5" fill="none"/>
+                    <path d="M60 10L40 18L30 42L36 44L40 32V108H80V32L84 44L90 42L80 18L60 10Z"
+                          stroke="#C8A96E" stroke-width="2" fill="none"/>
+                    <path d="M52 18C52 18 56 26 60 26C64 26 68 18 68 18"
+                          stroke="#C8A96E" stroke-width="1.5" fill="none"/>
                     <line x1="44" y1="52" x2="76" y2="52" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
                     <line x1="44" y1="62" x2="76" y2="62" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
                     <line x1="44" y1="72" x2="76" y2="72" stroke="#C8A96E" stroke-width="0.5" opacity="0.4"/>
                 </svg>
             </div>
         </div>
-    </div>
 
+    </div>
     <hr class="gold-rule">
 </section>
 
-<!-- ============ ORDER FORM ============ -->
+
+<!-- ============================================================
+     ORDER FORM
+     All labels, placeholders, options, and messages injected by render.js
+============================================================ -->
 <section class="order" id="order">
     <div class="order__container">
-        <span class="gold-label fade-in-up">اطلب الآن</span>
-        <h2 class="fade-in-up">اطلب ثوبك المفصّل</h2>
-        <p class="order__subtext fade-in-up">أدخل بياناتك وسنتواصل معك خلال 24 ساعة</p>
+
+        <span class="gold-label fade-in-up" id="form-label"></span>
+        <h2 class="fade-in-up" id="form-heading"></h2>
+        <p class="order__subtext fade-in-up" id="form-subtext"></p>
 
         <form id="orderForm" class="order__form" novalidate>
-            <!-- Thoob Type Cards -->
+
+            <!-- Thoob type cards (span labels injected; SVGs static) -->
             <div class="order__type-cards fade-in-up">
+
                 <label class="order__type-card selected">
                     <input type="radio" name="thoobType" value="white" checked>
-                    <!-- White Thoob SVG -->
                     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z"
+                              stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10"
+                              stroke="currentColor" stroke-width="1" fill="none"/>
                     </svg>
-                    <span>ثوب أبيض</span>
+                    <span id="type-label-white"></span>
                 </label>
+
                 <label class="order__type-card">
                     <input type="radio" name="thoobType" value="winter">
-                    <!-- Winter Thoob SVG (with horizontal lines) -->
                     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="currentColor" stroke-width="1" fill="none"/>
+                        <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z"
+                              stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10"
+                              stroke="currentColor" stroke-width="1" fill="none"/>
                         <line x1="26" y1="28" x2="38" y2="28" stroke="currentColor" stroke-width="0.8"/>
                         <line x1="26" y1="34" x2="38" y2="34" stroke="currentColor" stroke-width="0.8"/>
                         <line x1="26" y1="40" x2="38" y2="40" stroke="currentColor" stroke-width="0.8"/>
                         <line x1="26" y1="46" x2="38" y2="46" stroke="currentColor" stroke-width="0.8"/>
                     </svg>
-                    <span>ثوب شتوي</span>
+                    <span id="type-label-winter"></span>
                 </label>
+
             </div>
 
-            <!-- Quantity Stepper -->
+            <!-- Quantity stepper (symbols are operators, not content text) -->
             <div class="order__quantity fade-in-up">
-                <button type="button" class="order__quantity-btn order__quantity-btn--plus" aria-label="زيادة">+</button>
+                <button type="button" class="order__quantity-btn order__quantity-btn--plus"  aria-label="زيادة الكمية">+</button>
                 <div class="order__quantity-value">1</div>
-                <button type="button" class="order__quantity-btn order__quantity-btn--minus" aria-label="تقليل">−</button>
+                <button type="button" class="order__quantity-btn order__quantity-btn--minus" aria-label="تقليل الكمية">−</button>
                 <input type="hidden" name="quantity" id="quantity" value="1">
             </div>
 
-            <!-- Name & Phone Row -->
+            <!-- Name + Phone row -->
             <div class="order__row fade-in-up">
                 <div class="order__field">
-                    <label for="name">الاسم الكامل</label>
-                    <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
-                    <span class="error-msg">يرجى إدخال الاسم</span>
+                    <label for="name"  id="label-name"></label>
+                    <input type="text" id="name"  name="name"  required>
+                    <span class="error-msg" id="error-name"></span>
                 </div>
                 <div class="order__field">
-                    <label for="phone">رقم الجوال</label>
-                    <input type="tel" id="phone" name="phone" placeholder="05XXXXXXXX" required>
-                    <span class="error-msg">يرجى إدخال رقم جوال صحيح</span>
+                    <label for="phone" id="label-phone"></label>
+                    <input type="tel"  id="phone" name="phone" required>
+                    <span class="error-msg" id="error-phone"></span>
                 </div>
             </div>
 
-            <!-- City -->
+            <!-- City (options built by render.js) -->
             <div class="order__field fade-in-up">
-                <label for="city">المدينة</label>
-                <select id="city" name="city" required>
-                    <option value="" disabled selected>اختر مدينتك</option>
-                    <option value="الرياض">الرياض</option>
-                    <option value="جدة">جدة</option>
-                    <option value="مكة المكرمة">مكة المكرمة</option>
-                    <option value="المدينة المنورة">المدينة المنورة</option>
-                    <option value="الدمام">الدمام</option>
-                    <option value="الخبر">الخبر</option>
-                    <option value="بريدة">بريدة</option>
-                    <option value="تبوك">تبوك</option>
-                    <option value="أبها">أبها</option>
-                    <option value="حائل">حائل</option>
-                    <option value="نجران">نجران</option>
-                    <option value="جازان">جازان</option>
-                    <option value="أخرى">أخرى</option>
-                </select>
-                <span class="error-msg">يرجى اختيار المدينة</span>
+                <label for="city" id="label-city"></label>
+                <select id="city" name="city" required></select>
+                <span class="error-msg" id="error-city"></span>
             </div>
 
-            <!-- Notes -->
+            <!-- Notes (label innerHTML set by render.js to include optional badge) -->
             <div class="order__field fade-in-up">
-                <label for="notes">ملاحظات إضافية <span style="font-weight:400;color:var(--gray-mid)">(اختياري)</span></label>
-                <textarea id="notes" name="notes" placeholder="أي تفاصيل إضافية مثل المقاسات أو نوع القماش المفضّل..."></textarea>
+                <label for="notes" id="label-notes"></label>
+                <textarea id="notes" name="notes"></textarea>
             </div>
 
-            <!-- Submit -->
-            <button type="submit" class="order__submit fade-in-up">
-                إرسال الطلب
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Submit button (text prepended by render.js; SVG kept) -->
+            <button type="submit" class="order__submit fade-in-up" id="submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 12H5"/>
                     <path d="M12 5l-7 7 7 7"/>
                 </svg>
             </button>
+
         </form>
 
-        <!-- Success Message -->
+        <!-- Success state (h2 + p injected by render.js) -->
         <div class="order__success" id="orderSuccess">
             <div class="order__success-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#C8A96E"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"/>
                 </svg>
             </div>
-            <h2>تم إرسال طلبك بنجاح</h2>
-            <p>سنتواصل معك قريبًا لتأكيد التفاصيل</p>
+            <h2 id="success-title"></h2>
+            <p  id="success-msg"></p>
         </div>
+
     </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+
+<!-- ============================================================
+     FOOTER
+     All text injected by render.js
+============================================================ -->
 <footer class="footer">
     <div class="footer__logo">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z" stroke="#C8A96E" stroke-width="2" fill="none"/>
-            <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10" stroke="#C8A96E" stroke-width="1.5" fill="none"/>
+            <path d="M32 6L22 10L16 22L20 24L22 18V56H42V18L44 24L48 22L42 10L32 6Z"
+                  stroke="#C8A96E" stroke-width="2" fill="none"/>
+            <path d="M28 10C28 10 30 14 32 14C34 14 36 10 36 10"
+                  stroke="#C8A96E" stroke-width="1.5" fill="none"/>
         </svg>
-        <span>ثوب تيلورنج</span>
+        <span id="footer-brand-name"></span>
     </div>
-    <p class="footer__tagline">خياطة سعودية فاخرة</p>
+    <p class="footer__tagline" id="footer-tagline"></p>
     <hr class="gold-rule">
-    <p class="footer__copy">&copy; 2025 ثوب تيلورنج</p>
+    <p class="footer__copy" id="footer-copyright"></p>
 </footer>
 
-<!-- JS -->
+
+<!-- ============================================================
+     SCRIPTS
+     content.js → render.js → slider/scroll/form
+     (all defer = execute in document order after DOM is parsed)
+============================================================ -->
+<script defer src="js/content.js"></script>
+<script defer src="js/render.js"></script>
 <script defer src="js/slider.js"></script>
 <script defer src="js/scroll.js"></script>
 <script defer src="js/form.js"></script>
